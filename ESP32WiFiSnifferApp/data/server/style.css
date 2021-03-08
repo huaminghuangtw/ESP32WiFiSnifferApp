@@ -1,0 +1,139 @@
+/* Formatting based on html tags. */
+html {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+h1 {
+	font-size: 1.8rem;
+	color: white;
+}
+h2{
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #143642;
+}
+body {
+	margin: 0;
+}
+tbody {
+	max-height: 500px;
+	height: 500px;
+	width:100%;
+	display: block;
+	overflow-y:scroll;
+}
+th {
+	padding-bottom:10px;
+}
+tbody tr {
+	display: table;
+	width:100%;
+	table-layout:fixed;
+}
+thead {
+	display: table;
+	width:98.5%;
+	table-layout:fixed;
+}
+table {
+	width: 100%;
+}
+
+/* Formatting based on classes. */
+.topnav {
+	overflow: hidden;
+	background-color: #143642;
+	font-size: 28;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin: 0px;
+}
+.content {
+	max-width: 93%;
+	margin: 0 auto;
+	padding-top: 2%;
+}
+.button {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	width: 180px;
+	font-size: 24px;
+	text-align: center;
+	outline: none;
+	color: #fff;
+	background-color: #0f8b8d;
+	border: none;
+	border-radius: 5px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.button:active {
+	background-color: #0f8b8d;
+	box-shadow: 2 2px #CDCDCD;
+	transform: translateY(2px);
+}
+.state {
+	font-size: 1.5rem;
+	color:#8c8c8c;
+	font-weight: bold;
+}
+.tabButton {
+	background-color: #555;
+	color: white;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding-top: 15px;
+	padding-bottom: 20px;
+	font-size: 24px;
+	width: 15%;
+}
+.tabButton:hover {
+	background-color: #777;
+}
+.tabcontent {
+	background-color: #143642;
+	color: white;
+	display: none;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+.tab {
+	overflow:hidden;
+	padding-bottom:0px;
+}
+.tablecontainer {
+	max-height: 550px;
+	height: 550px;
+}
+.tablecontainer thead th {
+	position: sticky;
+	top: 0;
+}
+
+/* Formatting based on individual IDs. */
+#Left {
+	width: 35%;
+	float: left;
+}
+#Right {
+	width: 65%;
+	float: right;
+}
+#startButton {
+	float: right;
+	width: 100px;
+}
+#Map {
+	background-color: #e8e8e8;
+	width: 55vw;
+	height: 60vh;
+}
