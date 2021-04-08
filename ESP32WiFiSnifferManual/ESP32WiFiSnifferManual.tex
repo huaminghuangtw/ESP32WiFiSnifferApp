@@ -16,16 +16,18 @@
 \usepackage{etoolbox}
 \usepackage[final]{pdfpages}
 \usepackage{subfig}
-\usepackage{float}
 \usepackage{biblatex}
+\addbibresource{literature.bib}
 \usepackage{svg}
 \usepackage{graphicx}
+\usepackage{float}
+\usepackage{setspace}
 % hyperref should be the last package you load
 \usepackage{hyperref}
 
 
 \hypersetup{ colorlinks=true,
-			 linkcolor=blue,
+			 linkcolor=black,
 			 citecolor=blue,
 			 filecolor=blue,
 			 urlcolor=blue }
@@ -39,14 +41,6 @@
 \renewcommand{\footrulewidth}{0.5pt}
 \newcommand{\horrule}[1]{\rule{\linewidth}{#1}}
 
-\bibliography{literature}
-
-\numberwithin{equation}{section}   % Number equations within sections
-\numberwithin{figure}{section}     % Number figures within sections
-\numberwithin{table}{section}      % Number tables within sections
-
-\bibliography{literature}
-%
 %
 %--------------------------------------------------------%
 %--------------------------------------------------------%
@@ -57,7 +51,7 @@
 %--------------------------------------------------------%
 %--------------------------------------------------------%
 %
-%
+
 \title{\normalfont \normalsize \textsc{Technical University of Munich \\[5pt]
 Department of Civil, Geo and Environmental Engineering \\[5pt]
 Chair of Computational Modeling and Simulation \\[5pt]
@@ -84,17 +78,18 @@ Softwarelab Project} \\[36pt] \horrule{1pt} \\[0.4cm] \huge \textbf{\TITLE{}} \\
 \begin{document}
 \sloppy
 
-
-
 \begin{titlepage}
     \clearpage
     \maketitle
     \thispagestyle{empty}
 \end{titlepage}
-  
-\tableofcontents
 
-
+\begin{spacing}{1}
+    \clearpage
+    \tableofcontents
+    \thispagestyle{empty}
+    \setcounter{page}{0}
+\end{spacing}
 
 
 %% SECTION %%
@@ -134,9 +129,6 @@ The position determination algorithm in this implementation is signal strength (
 One most consider, however, that the use case does not really demand that the application pinpoints the location with high accuracy. It is only of interest, how larger crowds tend to move, not how each individual exactly walks around.
 
 
-
-
-
 \newpage
 
 \twocolumn
@@ -170,7 +162,6 @@ Multiple clients in the local network can access the webserver at the same time 
 
 \subsection{Web application}
 The necessary files ( *.html, *.css, *.js ) are loaded to the browser from the SD card of the master device when connecting to the webserver. After the websocket connection is established, downloading the logfile and controlling the onboard LED is possible ( for multiple clients ). Live streaming the measured data and position calculation and display is also available for a single client. The position determination is based on a multilateration algorithm using non-linear least squares method for iterating the final position estimate. For determining distances between the slave and tracked devices based on signal strength ( RSSI ) data, the log-normal shadowing radio propagation model is used. This position estimation method delivers good enough results when no major obstacles are present within the area.
-
 
 
 %% SECTION %%
@@ -234,6 +225,7 @@ For the plotting of the contour of the room, the corners of it must be defined i
 \end{figure}
 
 \newpage
+
 
 %% SECTION %%
 \section{Flashing of the devices}
@@ -332,6 +324,7 @@ This minimization is done by using the non-linear least squares method.
 
 \newpage
 
+
 %% SECTION %%
 \section{Possible further development options}
 
@@ -370,7 +363,6 @@ Instead of using a basic esp32 one could use a more robust board like a Raspberr
 
 In the following a decent amount of the online sources we have relied on during our work is collected, thematically ordered. This collection is meant to provide an entry point for the different topics we have touched on for those who might want to improve on this project later on.
 
-
 \subsection{Wi-Fi}
 
 \subsubsection{General}
@@ -390,6 +382,7 @@ In the following a decent amount of the online sources we have relied on during 
 
 
 \subsection{Webserver}
+
 
 \subsubsection{General}
 
@@ -432,8 +425,8 @@ In the following a decent amount of the online sources we have relied on during 
 \url{https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/ota.html}
 
 
-%% LORA %%
 \subsection{LoRa}
+
 
 \subsubsection{General}
 
@@ -448,29 +441,28 @@ In the following a decent amount of the online sources we have relied on during 
 \url{https://arxiv.org/pdf/1709.08296.pdf}
 
 
-%% NTP TIME %%
 \subsection{NTP time}
+
 
 \url{https://lastminuteengineers.com/esp32-ntp-server-date-time-tutorial/}\\[4pt]
 \url{https://www.youtube.com/watch?v=r2UAmBLBBRM}
 
 
-%% SD CARD %%
 \subsection{SD card}
+
 
 \url{https://github.com/espressif/arduino-esp32/tree/master/libraries/SD#faq}\\[4pt]
 \url{https://randomnerdtutorials.com/esp32-data-logging-temperature-to-microsd-card/}\\[4pt]
 \url{https://majenko.co.uk/blog/fast-efficient-data-storage-arduino}
 
 
-%% SPIFFS %%
 \subsection{SPIFFS}
 
 \url{https://docs.platformio.org/en/latest/platforms/espressif32.html#uploading-files-to-file-system-spiffs}
 
 
-%% FREE REAL TIME OPERATING SYSTEM %%
 \subsection{FreeRTOS}
+
 
 \url{https://freertos.org/implementation/a00004.html}\\[4pt]
 \url{https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/freertos-smp.html}\\[4pt]
@@ -482,8 +474,8 @@ In the following a decent amount of the online sources we have relied on during 
 \url{http://www.iotsharing.com/2017/06/arduino-esp32-freertos-how-to-use-task-param-task-priority-task-handle.html}
 
 
-%% ARTICLES ON POSITION DETERMINATION %%
 \subsection{Position determination}
+
 
 \url{https://core.ac.uk/download/pdf/30312076.pdf}\\[4pt]
 \url{https://journals.sagepub.com/doi/full/10.1155/2014/371350}\\[4pt]
@@ -494,8 +486,8 @@ In the following a decent amount of the online sources we have relied on during 
 \url{https://webpages.uncc.edu/~anasipur/pubs/Chuku-Southeastcon-2013.pdf}
 
 
-%% GENERAL ESP32 PROGRAMMING %%
 \subsection{General ESP32 programming}
+
 
 \url{https://www.circuitbasics.com/types-of-memory-on-the-arduino/}\\[4pt]
 \url{https://medium.com/the-esp-journal/esp32-programmers-memory-model-259444d89387}\\[4pt]
@@ -511,9 +503,9 @@ In the following a decent amount of the online sources we have relied on during 
 \url{https://youtu.be/DoctWoxIaH8}\\[4pt]
 \url{https://majenko.co.uk/blog/splitting-text-c}
 
-\nocite{*}   % Even non-cited BibTeX-Entries will be shown.
-\printbibliography[heading=bibintoc]
 
+\nocite{*}   % Even non-cited BibTeX-Entries will be shown
+\printbibliography[heading=bibintoc]
 
 
 \end{document}
