@@ -1,3 +1,4 @@
+![Presentation](https://user-images.githubusercontent.com/43208378/114064770-3ebea880-989a-11eb-932e-0b67ce022608.png)
 # ESP32WiFiSnifferApp
 
 <table>
@@ -20,6 +21,5 @@ An interdisciplinary team project of the course Software Lab at Technical Univer
 ![Poster](Poster.png)
 
 
-## Presentation
-
-[![Watch the video](https://i.imgur.com/zdiPKUd.png)](https://drive.google.com/file/d/1OOYYimOC2WSo_yMeU6AgRschL-jhe60d/view?usp=sharing)
+## Presentation  
+[![Watch the video](https://user-images.githubusercontent.com/43208378/114065534-0cfa1180-989b-11eb-937f-96531686b1b8.png)](https://drive.google.com/file/d/1OOYYimOC2WSo_yMeU6AgRschL-jhe60d/view?usp=sharing)
