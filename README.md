@@ -1,4 +1,3 @@
-![Presentation](https://user-images.githubusercontent.com/43208378/114064770-3ebea880-989a-11eb-932e-0b67ce022608.png)
 # ESP32WiFiSnifferApp
 
 <table>
@@ -10,7 +9,7 @@ An interdisciplinary team project of the course Software Lab at Technical Univer
 </table>
 
 <p align="center">
-  <img src= "https://user-images.githubusercontent.com/43208378/114058530-d4a30500-9893-11eb-87b9-ac5e7c3cfca7.gif">
+  <img src= "https://user-images.githubusercontent.com/43208378/114070634-80525200-98a0-11eb-8c3c-3d2c795af029.gif">
 </p>
 
 
@@ -18,7 +17,7 @@ An interdisciplinary team project of the course Software Lab at Technical Univer
 
 > Please see the documentation [*ESP32WiFiSnifferManual.pdf*](ESP32WiFiSnifferManual/ESP32WiFiSnifferManual.pdf) for instruction in using this software and details about this project.
 
-![Poster](Poster.png)
+![Poster](https://user-images.githubusercontent.com/43208378/114070043-e8ecff00-989f-11eb-8f9e-8b783817cf50.png)
 
 
 ## Presentation  
