@@ -68,107 +68,107 @@ void printConfigFile( const char* path_to_file )
 
 void printCurrentConfigData()
 {
-  Serial.println( "\n" );
-  Serial.println( "----- Content of the current state of config variables -----" );
-  Serial.println();
+	Serial.println( "\n" );
+	Serial.println( "----- Content of the current state of config variables -----" );
+	Serial.println();
 
-  Serial.print( "SSID: " );
-  Serial.println( g_espConfigData.ssid );
-  Serial.print( "Password: " );
-  Serial.println( g_espConfigData.pswd );
+	Serial.print( "SSID: " );
+	Serial.println( g_espConfigData.ssid );
+	Serial.print( "Password: " );
+	Serial.println( g_espConfigData.pswd );
 
-  Serial.println();
-  Serial.print( "1m RSSI: " );
-  Serial.println( g_espConfigData.rssi_1m );
+	Serial.println();
+	Serial.print( "1m RSSI: " );
+	Serial.println( g_espConfigData.rssi_1m );
 
-  Serial.println();
-  Serial.print( "Path loss exponent: " );
-  Serial.println( g_espConfigData.path_loss_exp, 4 );
- 
-  Serial.println(); 
-  Serial.print( "Is this a demo: ");
-  if ( g_espConfigData.demo )
-  {
-      Serial.println( "True" );
-  }
-  else
-  {
-      Serial.println( "False" );
-  }
+	Serial.println();
+	Serial.print( "Path loss exponent: " );
+	Serial.println( g_espConfigData.path_loss_exp, 4 );
 
-  Serial.println();
-  Serial.print( "Master device: ");
-  if ( g_espConfigData.am_i_master )
-  {
-      Serial.println( "True" );
-      Serial.print( "Master MAC: " );
-      {
-        // This char array must be able to accomodate a C-string.
-        // C-strings have a 0 at their ending (null-terminated string), so \0 is added to every char array passed to the function.
-        // Our MAC format contains 2 * 6 = 12 characters for the 6 two digit hex values and 5 colons between them.
-        // Therefore we need: 12 (MACs) + 5 (colons) + 1 (0 at end) = 18 characters for buffer size.
-        char forPrintingMac[18] = {0};
-        MACnumberTostring( forPrintingMac, g_espConfigData.master_MAC );
-        Serial.println( forPrintingMac );
-      }
-  }
-  else
-  {
-      Serial.println( "False" );
-  }
+	Serial.println(); 
+	Serial.print( "Is this a demo: ");
+	if ( g_espConfigData.demo )
+	{
+		Serial.println( "True" );
+	}
+	else
+	{
+		Serial.println( "False" );
+	}
 
-  Serial.println();
-  Serial.print( "Number of slaves: ");
-  Serial.println( g_espConfigData.number_of_slaves );
+	Serial.println();
+	Serial.print( "Master device: ");
+	if ( g_espConfigData.am_i_master )
+	{
+		Serial.println( "True" );
+		Serial.print( "Master MAC: " );
+		{
+			// This char array must be able to accomodate a C-string.
+			// C-strings have a 0 at their ending (null-terminated string), so \0 is added to every char array passed to the function.
+			// Our MAC format contains 2 * 6 = 12 characters for the 6 two digit hex values and 5 colons between them.
+			// Therefore we need: 12 (MACs) + 5 (colons) + 1 (0 at end) = 18 characters for buffer size.
+			char forPrintingMac[18] = {0};
+			MACnumberTostring( forPrintingMac, g_espConfigData.master_MAC );
+			Serial.println( forPrintingMac );
+		}
+	}
+	else
+	{
+		Serial.println( "False" );
+	}
 
-  Serial.println();
-  Serial.println( "Slave MACs: " );
-  for ( int i = 0; i < g_espConfigData.number_of_slaves; i++ )
-  {
-    // This char array must be able to accomodate a C-string.
-    // C-strings have a 0 at their ending, so \0 is added to every char array passed to the function.
-    // Our MAC format contains 2 * 6 = 12 characters for the 6 two digit hex values and 5 colons between them.
-    // Therefore we need: 12 (MACs) + 5 (colons) + 1 (0 at end) = 18 characters for buffer size.
-    char forPrintingMac[18] = {0};
-    MACnumberTostring( forPrintingMac, g_espConfigData.slave_MACs[i] );
-    Serial.println( forPrintingMac );
-  }
-  Serial.println();
-  
-  Serial.println( "X Coordinates of slaves: " );
-  for ( int i = 0; i < g_espConfigData.number_of_slaves; i++ )
-  {
-    Serial.print( g_espConfigData.slave_x_coords[i], 2 );
-    Serial.print( " " );
-  }
-  Serial.println();
-  
-  Serial.println();
-  Serial.println( "Y Coordinates of slaves: " );
-  for ( int i = 0; i < g_espConfigData.number_of_slaves; i++ )
-  {
-    Serial.print( g_espConfigData.slave_y_coords[i], 2 );
-    Serial.print( " " );
-  }
-  Serial.println();
+	Serial.println();
+	Serial.print( "Number of slaves: ");
+	Serial.println( g_espConfigData.number_of_slaves );
 
-  Serial.println();
-  Serial.print( "MAC of photo device: " );
-  {
-    // This char array must be able to accomodate a C-string.
-    // C-strings have a 0 at their ending, so \0 is added to every char array passed to the function.
-    // Our MAC format contains 2 * 6 = 12 characters for the 6 two digit hex values and 5 colons between them.
-    // Therefore we need: 12 (MACs) + 5 (colons) + 1 (0 at end) = 18 characters for buffer size.
-    char forPrintingMac[18] = {0};
-    MACnumberTostring( forPrintingMac, g_espConfigData.photo_device_MAC );
-    Serial.println( forPrintingMac );
-  }
-  Serial.println();
+	Serial.println();
+	Serial.println( "Slave MACs: " );
+	for ( int i = 0; i < g_espConfigData.number_of_slaves; i++ )
+	{
+		// This char array must be able to accomodate a C-string.
+		// C-strings have a 0 at their ending, so \0 is added to every char array passed to the function.
+		// Our MAC format contains 2 * 6 = 12 characters for the 6 two digit hex values and 5 colons between them.
+		// Therefore we need: 12 (MACs) + 5 (colons) + 1 (0 at end) = 18 characters for buffer size.
+		char forPrintingMac[18] = {0};
+		MACnumberTostring( forPrintingMac, g_espConfigData.slave_MACs[i] );
+		Serial.println( forPrintingMac );
+	}
+	Serial.println();
 
-  Serial.println( "-------------------- End of config info --------------------" );
-  Serial.println( "\n" );
+	Serial.println( "X Coordinates of slaves: " );
+	for ( int i = 0; i < g_espConfigData.number_of_slaves; i++ )
+	{
+	Serial.print( g_espConfigData.slave_x_coords[i], 2 );
+	Serial.print( " " );
+	}
+	Serial.println();
 
-  delay(1000);
+	Serial.println();
+	Serial.println( "Y Coordinates of slaves: " );
+	for ( int i = 0; i < g_espConfigData.number_of_slaves; i++ )
+	{
+		Serial.print( g_espConfigData.slave_y_coords[i], 2 );
+		Serial.print( " " );
+	}
+	Serial.println();
+
+	Serial.println();
+	Serial.print( "MAC of photo device: " );
+	{
+		// This char array must be able to accomodate a C-string.
+		// C-strings have a 0 at their ending, so \0 is added to every char array passed to the function.
+		// Our MAC format contains 2 * 6 = 12 characters for the 6 two digit hex values and 5 colons between them.
+		// Therefore we need: 12 (MACs) + 5 (colons) + 1 (0 at end) = 18 characters for buffer size.
+		char forPrintingMac[18] = {0};
+		MACnumberTostring( forPrintingMac, g_espConfigData.photo_device_MAC );
+		Serial.println( forPrintingMac );
+	}
+	Serial.println();
+
+	Serial.println( "-------------------- End of config info --------------------" );
+	Serial.println( "\n" );
+
+	delay(1000);
 
 } // printCurrentConfigData
 
@@ -184,7 +184,6 @@ void configESPfromJSON( const char* path_to_file )
 #elif defined(Slave_3) || defined(Slave_4)
     configJsonObj = getConfigFile( SPIFFS, configDynJsonDoc, path_to_file );
 #endif
-  
     strcpy( g_espConfigData.ssid, configJsonObj["ssid"] );
     strcpy( g_espConfigData.pswd, configJsonObj["pswd"] );
     g_espConfigData.am_i_master = configJsonObj["am_i_master"];
@@ -215,7 +214,6 @@ void configESPfromJSON( const char* path_to_file )
 
     const char* bufPhotoDevice = configJsonObj["photo_device_MAC"];
     stringToMACnumber( bufPhotoDevice, g_espConfigData.photo_device_MAC );
-
 
     for (uint8_t i = 0; i < g_espConfigData.number_of_slaves; i++)
     {

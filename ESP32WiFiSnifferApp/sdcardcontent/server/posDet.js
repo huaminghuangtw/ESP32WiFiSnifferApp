@@ -45,7 +45,7 @@ function calculateErrorVector( x_0, y_0, rssis, x_esps, y_esps, one_meter_rssi, 
 	for ( var i = 0; i < x_esps.length; i++ )
 	{
 		errorVect[i] = lnsmDistanceEstimateSquared( rssis[i], one_meter_rssi, path_loss_exponent)
-					 - distanceSquared( x_0, y_0, x_esps[i], y_esps[i] );
+					   - distanceSquared( x_0, y_0, x_esps[i], y_esps[i] );
 	}
 	
 	return errorVect;

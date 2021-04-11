@@ -1,14 +1,14 @@
 {
-"ssid":"YourSSID",
-"pswd":"YourPassword",
-"am_i_master":true,
-"demo":true,
-"master_MAC":"00:00:00:00:0F:05",
-"master_coords":{"x":0.1,"y":0.1},
-"number_of_slaves":4,
-"slave_MACs":["00:00:00:00:0F:01","00:00:00:00:0F:02","00:00:00:00:0F:03","00:00:00:00:0F:04"],
-"slave_coords":[{"x":0.1,"y":0.53},{"x":0.1,"y":2.9},{"x":4.47,"y":2.9},{"x":2.65,"y":0.6}],
-"photo_device_MAC":"F0:F0:F0:F0:F0:F0",
-"RSSI_1m":-46,
-"path_loss_exp":2.4991
+	"ssid":"YourSSID",
+	"pswd":"YourPassword",
+	"am_i_master":true,
+	"demo":true,
+	"master_MAC":"00:00:00:00:0F:05",
+	"master_coords":{"x":0.1,"y":0.1},
+	"number_of_slaves":4,
+	"slave_MACs":["00:00:00:00:0F:01","00:00:00:00:0F:02","00:00:00:00:0F:03","00:00:00:00:0F:04"],
+	"slave_coords":[{"x":0.1,"y":0.53},{"x":0.1,"y":2.9},{"x":4.47,"y":2.9},{"x":2.65,"y":0.6}],
+	"photo_device_MAC":"F0:F0:F0:F0:F0:F0",
+	"RSSI_1m":-46,
+	"path_loss_exp":2.4991
 }

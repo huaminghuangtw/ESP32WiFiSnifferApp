@@ -6,25 +6,23 @@ var websocket;
 
 var demo = undefined; // If true, it displays the demo_device_position on the map.
 var demo_device_position = [ 2.89, 1.92 ];
-  
+
 var RSSIc = undefined; //dBm
 var pathLossExp = undefined;
-  
+
 var masterCoords = [undefined, undefined]; //m
-  
+
 var numberOfSlaves = undefined;
 var espSlaveXcoords = []; //m
 var espSlaveYcoords = []; //m
-  
+
 var roomContourXCoords = []; //m
 var roomContourYCoords = []; //m
 
 var roomMaxLength = undefined; // m
 var roomMaxWidth = undefined;  // m
 var edgeGapSize = 0.05;   // portion of canvas height/width
-  
-  
-  
+
 window.addEventListener('load', onLoad);
 
 // When loading the site this function will be runned.
@@ -45,7 +43,7 @@ function onOpen(event) {
     console.log('Connection opened');
 	
 } // onOpen
-  
+
 
 // When the websocket connection was closed this function runs.
 function onClose(event) {
@@ -53,21 +51,21 @@ function onClose(event) {
     setTimeout(initWebSocket, 2000);
 	
 } // onClose
-  
- 
+
+
 // For handling incoming websocket messages.
 function onMessage(event) {
     var state;
     if (event.data == "1") {
-      state = "ON";
-	  document.getElementById('ledState').innerHTML = state;
+		state = "ON";
+		document.getElementById('ledState').innerHTML = state;
     }
     else if (event.data == "0") {
-      state = "OFF";
-	  document.getElementById('ledState').innerHTML = state;
+		state = "OFF";
+		document.getElementById('ledState').innerHTML = state;
     }
 	else if(event.data == "stream started") {
-	  console.log("Stream started.");
+		console.log("Stream started.");
 	}
 	else
 	{
@@ -81,8 +79,8 @@ function onMessage(event) {
 	}
 	
 } // onMessage
-  
-  
+
+
 function initWebSocket() {
 	console.log('Trying to open a WebSocket connection...');
 	websocket = new WebSocket(gateway);
@@ -91,13 +89,13 @@ function initWebSocket() {
 	websocket.onmessage = onMessage;
 
 } // initWebSocket
-  
-  
+
+
 function initButtons() {
 	document.getElementById('ledButton').addEventListener('click', toggle);
 	
 } // initButtons
-  
+
 
 // Send the "toggle" text message to the server when the Toggle/LED button was clicked.
 function toggle(){
@@ -127,7 +125,8 @@ function loadRoomContourJSON( callback ) {
 	var xobj = new XMLHttpRequest();
 	xobj.open('GET','room.js',true);
 	xobj.onreadystatechange = function() {
-		if( xobj.readyState == 4 && xobj.status == "200") {
+		if( xobj.readyState == 4 && xobj.status == "200")
+		{
 			callback(xobj.responseText);
 		}
 	};

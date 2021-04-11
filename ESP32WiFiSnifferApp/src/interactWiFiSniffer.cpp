@@ -140,7 +140,7 @@ void printWiFiDeviceData( wifiDeviceData& data )
     Serial.println();
 
 } // printWiFiDeviceData
- 
+
 
 // Print WiFi device payload to serial terminal
 void printWiFiDevicePayload( wifiDevicePayload& payload )

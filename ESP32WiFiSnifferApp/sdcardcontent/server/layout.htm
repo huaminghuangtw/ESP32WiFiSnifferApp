@@ -2,99 +2,96 @@
 <html>
 
 <head>
-  <title>ESP32 Sniffer App</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/jpg" href="sniffer.jpg">
-  <link rel="stylesheet" type="text/css" href="/style.css">
-  <script type="text/javascript" src="general.js" async></script>
-  <script type="text/javascript" src="tabs.js" async></script>
-  <script type="text/javascript" src="posDet.js" async></script>
-  <script type="text/javascript" src="config.js" async></script>
-  <script type="text/javascript" src="room.js" async></script>
+	<title>ESP32 Sniffer App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/jpg" href="sniffer.jpg">
+	<link rel="stylesheet" type="text/css" href="/style.css">
+	<script type="text/javascript" src="general.js" async></script>
+	<script type="text/javascript" src="tabs.js" async></script>
+	<script type="text/javascript" src="posDet.js" async></script>
+	<script type="text/javascript" src="config.js" async></script>
+	<script type="text/javascript" src="room.js" async></script>
 </head>
 
 <body>
 
-  <div class="topnav">
-    <h1>ESP32 Sniffer App</h1>
-  </div>
-  
-  <div class="content">
-  
-	  <div id="Left">
-	    <h2>Output - GPIO 25</h2>
-	    <p class="state">LED: <span id="ledState">%STATE%</span></p>
-	    <p><button id="ledButton" class="button">Toggle</button></p>
-		
-	    <h2>Download logfiles</h2>
-		<a href="/data/logfile.csv" download="logfile.csv">
-	    <p><button id="downloadButton" class="button">Download</button></p>
-		</a>
-	  </div>
-	  
-	  <div id="Right">
-	    <div class="tab">
-			<button class="tabButton" onclick="openTab('mapPage', this, '#143642')" id="mapTab">
-			Map
-			</button>
-			<button class="tabButton" onclick="openTab('posDataPage', this, '#143642')" id="posTableTab">
-			Positions
-			</button>
-			<button class="tabButton" onclick="openTab('measDataPage', this, '#143642')" id="measTableTab">
-			Logs
-			</button>
-			<input onclick="dataStreamStartOrStop()" type="button"  value="Start" class="button" id="startButton">
-			</input>
-		</div>
-		
-		<div class="tabcontent" id="mapPage">
-			<canvas id="Map" width="2000" height="1200">
-			No browser support for canvas element.
-			</canvas>
-		</div>
-		
-		<div class="tabcontent" id="posDataPage" >
-			<h3>Calculated positions of the devices</h3>
-			<div class="tablecontainer">
-				<table id="posDataTable">
-					<thead>
-					<tr>
-						<th>Time<br>[msec]</th>
-						<th>MAC<br>[-]</th>
-						<th>X<br>[m]</th>
-						<th>Y<br>[m]</th>
-					</tr>
-					</thead>
-					<tbody id="posDataTableBody">
-					</tbody>
-				</table>
-			</div>
-		</div>
+	<div class="topnav">
+		<h1>ESP32 Sniffer App</h1>
+	</div>
 
-		<div class="tabcontent" id="measDataPage" >
-			<h3>Received data logs from ESP32s</h3>
-			<div class="tablecontainer">
-				<table id="measDataTable">
-					<thead>
-					<tr>
-						<th>Time<br>[msec]</th>
-						<th>MAC<br>[-]</th>
-						<th>RSSI 1<br>[dBm]</th>
-						<th>RSSI 2<br>[dBm]</th>
-						<th>RSSI 3<br>[dBm]</th>
-						<th>RSSI 4<br>[dBm]</th>
-					</tr>
-					</thead>
-					<tbody id="measDataTableBody">
-					</tbody>
-				</table>
+	<div class="content">
+
+		<div id="Left">
+			<h2>Output - GPIO 25</h2>
+			<p class="state">LED: <span id="ledState">%STATE%</span></p>
+			<p><button id="ledButton" class="button">Toggle</button></p>
+			
+			<h2>Download logfiles</h2>
+			<a href="/data/logfile.csv" download="logfile.csv">
+			<p><button id="downloadButton" class="button">Download</button></p>
+			</a>
+		</div>
+	
+		<div id="Right">
+			<div class="tab">
+				<button class="tabButton" onclick="openTab('mapPage', this, '#143642')" id="mapTab">
+				Map
+				</button>
+				<button class="tabButton" onclick="openTab('posDataPage', this, '#143642')" id="posTableTab">
+				Positions
+				</button>
+				<button class="tabButton" onclick="openTab('measDataPage', this, '#143642')" id="measTableTab">
+				Logs
+				</button>
+				<input onclick="dataStreamStartOrStop()" type="button"  value="Start" class="button" id="startButton">
+				</input>
+			</div>
+			
+			<div class="tabcontent" id="mapPage">
+				<canvas id="Map" width="2000" height="1200">
+				No browser support for canvas element.
+				</canvas>
+			</div>
+		
+			<div class="tabcontent" id="posDataPage" >
+				<h3>Calculated positions of the devices</h3>
+				<div class="tablecontainer">
+					<table id="posDataTable">
+						<thead>
+						<tr>
+							<th>Time<br>[msec]</th>
+							<th>MAC<br>[-]</th>
+							<th>X<br>[m]</th>
+							<th>Y<br>[m]</th>
+						</tr>
+						</thead>
+						<tbody id="posDataTableBody"></tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="tabcontent" id="measDataPage" >
+				<h3>Received data logs from ESP32s</h3>
+				<div class="tablecontainer">
+					<table id="measDataTable">
+						<thead>
+						<tr>
+							<th>Time<br>[msec]</th>
+							<th>MAC<br>[-]</th>
+							<th>RSSI 1<br>[dBm]</th>
+							<th>RSSI 2<br>[dBm]</th>
+							<th>RSSI 3<br>[dBm]</th>
+							<th>RSSI 4<br>[dBm]</th>
+						</tr>
+						</thead>
+						<tbody id="measDataTableBody">
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
-		
-	  </div>
-	  
-  </div>
-  
+	</div>
+
 </body>
 
 </html>
