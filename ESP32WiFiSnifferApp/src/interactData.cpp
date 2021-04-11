@@ -110,9 +110,9 @@ void normalModeDataProcessor( const wifiDevicePayload payload, std::vector<combi
     stringToMACnumber( payload.mac, payloadMAC );
 
     auto it = std::find_if( buffer.begin(), buffer.end(), [payloadMAC] ( const combinedWiFiDeviceData& existingDevice )
-														{
-                                                            return std::equal( std::begin(existingDevice.mac.mac), std::end(existingDevice.mac.mac), std::begin(payloadMAC.mac) );
-														} );
+	{
+	    return std::equal( std::begin(existingDevice.mac.mac), std::end(existingDevice.mac.mac), std::begin(payloadMAC.mac) );
+	} );
     
     if ( it != buffer.end() )   // The incoming device already exists on buffer
     {
