@@ -111,11 +111,11 @@ std::vector<std::string> parseWiFiDeviceData( wifiDeviceData& data )
 void printWiFiDeviceData( std::vector<std::string> data )
 {
     Serial.print( F("Timestamp in usecs: ") );
-	Serial.println( data[0].c_str() );
+    Serial.println( data[0].c_str() );
     Serial.print( F("MAC Address: ") );
-	Serial.println( data[1].c_str() );
-	Serial.print( F("RSSI: ") );
-	Serial.print( data[2].c_str() );
+    Serial.println( data[1].c_str() );
+    Serial.print( F("RSSI: ") );
+    Serial.print( data[2].c_str() );
     Serial.println( F(" dBm") );
     Serial.println();
 
@@ -131,11 +131,11 @@ void printWiFiDeviceData( wifiDeviceData& data )
     MACnumberTostring( stringMACaddress, data.mac );
 
     Serial.print( F("Timestamp in usecs: ") );
-	Serial.println( stringTimestamp );
+    Serial.println( stringTimestamp );
     Serial.print( F("MAC Address: ") );
-	Serial.println( stringMACaddress );
-	Serial.print( F("RSSI: ") );
-	Serial.print( data.rssi );
+    Serial.println( stringMACaddress );
+    Serial.print( F("RSSI: ") );
+    Serial.print( data.rssi );
     Serial.println( F(" dBm") );
     Serial.println();
 
@@ -165,11 +165,11 @@ void printWiFiDevicePayload( wifiDevicePayload& payload )
     Serial.println( payload.packetID );
 
     Serial.print( F("MAC Address: ") );
-	Serial.println( payload.mac );
+    Serial.println( payload.mac );
 
-	Serial.print( F("RSSI: ") );
-	Serial.print( payload.rssi );
-	Serial.println( F(" dBm") );
+    Serial.print( F("RSSI: ") );
+    Serial.print( payload.rssi );
+    Serial.println( F(" dBm") );
     
     Serial.println();
 
@@ -187,9 +187,9 @@ void printCombinedWiFiDeviceData( combinedWiFiDeviceData& combinedData )
     Serial.print( F("MAC Address: ") );
     char strMacAddr[18] = {0};
     MACnumberTostring( strMacAddr, combinedData.mac );
-	Serial.println( strMacAddr );
+    Serial.println( strMacAddr );
 
-	for ( size_t i = 0; i < g_espConfigData.number_of_slaves; ++i )
+    for ( size_t i = 0; i < g_espConfigData.number_of_slaves; ++i )
     {
         Serial.print( F("RSSI ") );
         Serial.print( i + 1 );
