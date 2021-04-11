@@ -87,21 +87,21 @@ std::string uint32_to_string( uint32_t value )
 
 void print_uint64_t(uint64_t num)
 {
-	char rev[128]; 
-	char *p = rev + 1;
+    char rev[128]; 
+    char *p = rev + 1;
 
-	while (num > 0)
-	{
-		*p++ = '0' + ( num % 10 );
-		num /= 10;
-	}
-	p--;
+    while (num > 0)
+    {
+        *p++ = '0' + ( num % 10 );
+        num /= 10;
+    }
+    p--;
 
-	// Print the number which is now in reverse
-	while (p > rev)
-	{
-		Serial.print(*p--);
-	}
+    // Print the number which is now in reverse
+    while (p > rev)
+    {
+        Serial.print(*p--);
+    }
 
 } // print_uint64_t
 
