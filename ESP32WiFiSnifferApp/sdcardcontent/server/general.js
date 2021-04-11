@@ -40,30 +40,30 @@ function onLoad(event) {
 
 // When the websocket connection was opened this function runs.
 function onOpen(event) {
-    console.log('Connection opened');
+	console.log('Connection opened');
 	
 } // onOpen
 
 
 // When the websocket connection was closed this function runs.
 function onClose(event) {
-    console.log('Connection closed');
-    setTimeout(initWebSocket, 2000);
+	console.log('Connection closed');
+	setTimeout(initWebSocket, 2000);
 	
 } // onClose
 
 
 // For handling incoming websocket messages.
 function onMessage(event) {
-    var state;
-    if (event.data == "1") {
+	var state;
+	if (event.data == "1") {
 		state = "ON";
 		document.getElementById('ledState').innerHTML = state;
-    }
-    else if (event.data == "0") {
+	}
+	else if (event.data == "0") {
 		state = "OFF";
 		document.getElementById('ledState').innerHTML = state;
-    }
+	}
 	else if(event.data == "stream started") {
 		console.log("Stream started.");
 	}
