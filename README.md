@@ -21,7 +21,7 @@ An interdisciplinary team project of the course Software Lab at Technical Univer
 
 ### Overview
 
-> Please see the documentation [*ESP32WiFiSnifferManual.pdf*](ESP32WiFiSnifferManual/ESP32WiFiSnifferManual.pdf) for instruction in using this software and details about this project.
+> Please see the documentation [*ESP32WiFiSnifferManual.pdf*](ESP32WiFiSnifferManual.pdf) for instruction in using this software and details about this project.
 
 ![Poster](https://user-images.githubusercontent.com/43208378/114070043-e8ecff00-989f-11eb-8f9e-8b783817cf50.png)
 
