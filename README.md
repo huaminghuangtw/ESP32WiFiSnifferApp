@@ -9,8 +9,6 @@ An interdisciplinary team project of the course Software Lab at Technical Univer
 </tr>
 </table>
 
----
-
 ### Demo
 
 <p align="center">
@@ -33,4 +31,4 @@ An interdisciplinary team project of the course Software Lab at Technical Univer
 ---
 
 ### Contact
-If you have any question or suggestion, feel free to contact me at huaming.huang.tw@gmail.com. Contributions are also welcomed. Please open a [pull-request](https://github.com/hmhuang0501/ESP32WiFiSnifferApp/compare) or an [issue](https://github.com/hmhuang0501/ESP32WiFiSnifferApp/issues/new) in this repository.
+If you have any question or suggestion, feel free to contact me at huaming.huang.tw@gmail.com. Contributions are also welcomed. Please open a [pull-request](https://github.com/huaminghuangtw/ESP32WiFiSnifferApp/compare) or an [issue](https://github.com/huaminghuangtw/ESP32WiFiSnifferApp/issues/new) in this repository.
